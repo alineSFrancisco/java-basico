@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class areaRetangulo {
+public class AreaRetangulo {
     /*Escreva um código que receba a base e a altura de um retângulo, 
     calcule sua área e exiba na tela fórmula: área=base X altura */
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class diferencaEntreIdades {
+public class DiferencaEntreIdades {
     /*Escreva um código que receba o nome e a idade de 2 pessoas e 
     imprima a diferença de idade entre elas */
     public static void main(String[] args) {
@@ -14,13 +14,8 @@ public class diferencaEntreIdades {
         var name2 = scanner.next();
         System.out.printf("Informe a idade de %s : ", name2);
         var age2 = scanner.nextInt();
-        var diferencaEntreIdades = 0; 
-        if (age > age2) {
-            diferencaEntreIdades = age - age2;
-        }else{
-            diferencaEntreIdades = age2 - age;
-        }
+        int diferencaIdade = Math.abs(age - age2);
         
-        System.out.printf("a diferença de idade entre %s e %s é de %d anos", name, name2, diferencaEntreIdades);
+        System.out.printf("a diferença de idade entre %s e %s é de %d anos \n", name, name2, diferencaIdade);
     }
 }
