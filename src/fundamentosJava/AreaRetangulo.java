@@ -1,3 +1,4 @@
+package fundamentosJava;
 import java.util.Scanner;
 
 public class AreaRetangulo {
@@ -7,9 +8,8 @@ public class AreaRetangulo {
     private static final String TITULO = "**** CALCULANDO A ÁREA DE UM RETANGULO ****";
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println(TITULO);
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Informe o tamanho da base de um retangulo");
             int base = scanner.nextInt();
             System.out.println("Informe o tamanho da altura de um retangulo");

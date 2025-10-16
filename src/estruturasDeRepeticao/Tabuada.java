@@ -1,4 +1,4 @@
-package estruturasderepeticao;
+package estruturasDeRepeticao;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
