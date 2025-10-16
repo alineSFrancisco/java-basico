@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AreaQuadrado {
@@ -20,7 +21,7 @@ public class AreaQuadrado {
                 int areaQuadrado = lado * lado;
                 System.out.println("A área do quadrado é " + areaQuadrado);
             }
-        } catch (java.util.InputMismatchException e) {
+        } catch (InputMismatchException e) {
             System.out.println("Entrada inválida. Por favor, insira um número inteiro.");
         }
     }
