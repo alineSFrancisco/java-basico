@@ -1,3 +1,4 @@
+package fundamentosJava;
 import java.util.Scanner;
 
 public class DiferencaEntreIdades {
