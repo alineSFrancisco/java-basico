@@ -15,18 +15,30 @@ public class DivisaoEntreNumeros {
     public static void main(String[] args) {
         System.out.println(TITULO);
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Informe o número inicial: ");
+            System.out.print("Informe o número inicial (divisor): ");
             int numeroInicial = scanner.nextInt();
+
+            // 1. Validação para evitar divisão por zero
+            if (numeroInicial == 0) {
+                System.out.println("Erro: O número inicial não pode ser zero para evitar divisão por zero.");
+                return; // Encerra o programa
+            }
+
             System.out.println("\nAgora, informe outros números. A execução continuará até que um número dividido pelo inicial tenha resto diferente de zero.");
-            //System.out.println("Números menores que o número inicial serão ignorados.");
+            System.out.println("Números menores que o número inicial serão ignorados."); // 2. Instrução descomentada
             while (true) {
-                System.out.print("Informe um número: ");
+                System.out.print("Informe um número (dividendo): ");
                 int numeroAtual = scanner.nextInt();
-                if (numeroAtual % numeroInicial == 0) {
-                    System.out.printf("O número %d dividido por %d tem resto 0. Continue informando números.\n", numeroAtual, numeroInicial);
-                } else {
+                if (numeroAtual < numeroInicial) {
+                    System.out.printf("Número %d ignorado: É menor que o número inicial (%d).\n", numeroAtual, numeroInicial);
+                    continue;
+                }
+                // 3. Lógica do loop refatorada para verificar a condição de parada primeiro
+                if (numeroAtual % numeroInicial != 0) {
                     System.out.printf("O número %d dividido por %d tem resto %d (diferente de zero). Encerrando o programa.\n", numeroAtual, numeroInicial, numeroAtual % numeroInicial);
-                    break;
+                    break; // Sai do loop
+                } else {
+                    System.out.printf("O número %d dividido por %d tem resto 0. Continue informando números.\n", numeroAtual, numeroInicial);
                 }
             }
         } catch (InputMismatchException e) {
